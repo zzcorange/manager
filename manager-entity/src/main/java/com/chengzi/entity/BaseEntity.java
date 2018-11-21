@@ -1,8 +1,9 @@
 package com.chengzi.entity;
 
+import java.io.Serializable;
 import java.lang.reflect.Field;
 
-public class BaseEntity {
+public class BaseEntity implements Serializable {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         Field[] fields = getClass().getDeclaredFields();

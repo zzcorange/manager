@@ -20,4 +20,6 @@ public interface UserMapper {
      * @mbggenerated
      */
     List<User> selectAll();
+
+    User selectOne(String userName);
 }

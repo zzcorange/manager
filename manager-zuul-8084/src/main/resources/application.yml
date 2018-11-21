@@ -9,23 +9,15 @@ server:
 spring:
   application:
     name: manager-zuul
-  sleuth:
-    sampler:
-      probability: 1.0
+ # sleuth:
+ #  sampler:
+  #    probability: 1.0
 #  zipkin:
  #   baseurl: http://localhost:9411
 zuul:
   routes:
     api-a:
       path: /api-a/**
-      serviceId: service-ribbon
-    api-b:
-      path: /api-b/**
-      serviceId: service-feign
-    api-hi:
-      path: /api-hi/**
-      serviceId:  service-hi
-    api-feign:
-      path: /api-feign/**
-      serviceId:  service-feign
+      serviceId: manager-database
+
 debug: true
