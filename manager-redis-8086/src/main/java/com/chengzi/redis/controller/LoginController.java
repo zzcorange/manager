@@ -4,11 +4,14 @@ package com.chengzi.redis.controller;
 import com.chengzi.redis.tools.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/redis")
 @RestController
+@PropertySource("classpath:redisProperties.properties")
 public class LoginController {
     @Autowired
     private RedisUtil redisUtil;
@@ -32,13 +35,14 @@ public class LoginController {
      * 保存登录token
      * @param userName
      * @param token
-     * @return  -1 token已存在，拒绝更新 0 更新失败 1 更新成功
+     * @return  1 token已存在，拒绝更新 0 更新失败 1 更新成功
      */
     @PostMapping("/login")
-    public String login(@RequestParam String userName,@RequestParam String token){
+    public String login(@RequestParam("userName") String userName,@RequestParam("token") String token){
+        System.out.println("UserName="+userName+";token="+token);
        String key = loginPrefix+userName;
        if(redisUtil.isExists(key)){
-           return "-1";
+           return "1";
        }
        try{
             redisUtil.insert(key,token,exp);

@@ -43,10 +43,10 @@ public class RedisUtil {
             this.clusterOperations = redisTemplate.opsForCluster();
         }
         public  void insert(String key,Object value,long exp){
-            operations.set(key,value,exp, TimeUnit.MILLISECONDS);
+            operations.set(key,value,exp, TimeUnit.SECONDS);
         }
         public  void insertString(String key,String value,long exp){
-        operations.set(key,value,exp, TimeUnit.MILLISECONDS);
+        operations.set(key,value,exp, TimeUnit.SECONDS);
     }
         public  Object  select(String key){
            return operations.get(key);

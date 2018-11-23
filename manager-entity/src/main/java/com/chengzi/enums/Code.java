@@ -3,6 +3,9 @@ package com.chengzi.enums;
 import org.json.JSONObject;
 
 public enum Code {
+    LOGIN_FAIL_NOTUSER("-1","用户不存在"),
+    LOGIN_FAIL_PASSWORD_ERROR("-1","密码错误"),
+    LOGIN_FAIL("-1","登录失败"),
     SUCCESS("1","");
     private String code;
     private String message;
