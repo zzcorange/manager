@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gbk" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<title>信息发布平台</title>
+<link href="css/style.css" rel="stylesheet" />
+<link href="css/logcss.css" rel="stylesheet" />
+<script src="./js/jquery.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="./js/login.js" charset="utf-8"></script>
+
+<script>
+var $main = $cloud = mainwidth = null;
+var offset1 = 120;
+var offset2 = 230;
+var offsetbg = 0;
+$(document).ready(
+	function () {
+		$main = $("#mainBody");
+		$body = $("body");
+		$cloud1 = $("#cloud1");
+		$cloud2 = $("#cloud2");
+		mainwidth = $main.outerWidth();  
+	}
+);
+
+/// 椋樺姩
+setInterval(function flutter() {
+	if (offset1 >= mainwidth) {
+		offset1 =  -580;
+	}
+
+	if (offset2 >= mainwidth) {
+		 offset2 =  -580;
+	}
+	offset1 += 1.1;
+	offset2 += 1;
+	$cloud1.css("background-position", offset1 + "px -150px")
+	
+	$cloud2.css("background-position", offset2 + "px 180px")
+}, 100);
+
+</script>
+</head>
+
+<body>
+
+<div class="logtop"> <div class="lianxi"><a href="#" class="help">帮助中心</a>&nbsp;&nbsp;  |&nbsp; &nbsp; <a href="#" class="catus">关于我们</a></div><img src="images/logo.jpg" />  </div>
+<div class="flexslider" id="mainBody"  style="background:url(images/logbg.jpg) 50% 0 no-repeat;">
+<div id="cloud1" class="cloud2"></div>
+    <div id="cloud2" class="cloud"></div>
+  
+    <div class="logcon">
+ 
+      <div class="logtbl" >
+      <h2>用户登录</h2>
+        <ul>
+          <li> 
+        <input type="text" class="tblipt" id="username" placeholder="请输入账号"/>
+        <img src="images/log_04.gif" class="tbim">
+          </li>
+          <li> 
+          <input type="text" class="tblipt" id="password"  placeholder="请输入密码"/>
+          <img src="images/log_03.gif" class="tbim">
+          </li> 
+          <li style="height:20px"> <input type="checkbox" class="vm" name="rem" id="rem" /> <label for="rem">记住密码</label></li>
+          <li style="width:190px; float:left;">
+          
+            <span  style="width:182px"><input type="text" class="tblipt "  placeholder="请输入验证密码"/></span> 
+          </li>
+          <li style="width:90px;float:left; border:0;"> 
+          <img src="images/ewm.jpg" width="89" height="35"> </li>
+          <div class="clear" ></div>
+        
+          <li style="border:0;"> <a href="###"  id="login" class="logbtn"><span class="transition">登录<br/><br/>登录</span></a> </li><p class="zc"><a href="#">还没有账号，快速注册</a></p>
+          <p class="admts">网络出错，请稍后登录</p>
+        </ul>
+      </div>
+
+    </div>
+ 
+
+</div>
+<div class="bom">Copyright 2016 清远市人力资源和社会保障局 版权所有 All Right Reserved</div>
+
+</body>
+</html>

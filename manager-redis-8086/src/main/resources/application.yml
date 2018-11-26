@@ -1,0 +1,21 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: manager-redis
+  redis:
+    database: 0
+    host: 119.23.74.163
+    port: 8003
+    password: zzctest123456
+    jedis:
+      pool:
+        max-active: 20
+        max-idle: 10
+        max-wait: 1000ms
+        min-idle: 5
+    timeout:  100ms
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/

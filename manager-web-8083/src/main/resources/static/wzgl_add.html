@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>信息发布平台</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/com.js"></script>
+    <script src="js/nav.js"></script>
+  </head>
+  <body>
+    <div class="ntitl"> <span class="pl10"><img src="images/home.png" class="ime"/><a href="#">首页</a> / 信息发布 / 文章管理 /  文章新增</span> </div>
+    <div class="rigco_c">
+      <div class="clear pt10"></div>
+      <div class="bgwhite twzsx">
+        <div class="tle"><img src="images/title_ico.jpg" class="img"/>文章新增</div>
+        <div class="clear pt10"></div>
+        
+        
+        <div class="twcon">
+          <table width="100%" class="tble ways">
+            <!--  <tr>
+              <th><em class="red">*</em> 显示方式</th>
+              <td><input type="radio" name="radio-btn" /> <label class="fl pr10">轮播图显示</label> <input type="radio" name="radio-btn" /> <label class="fl pr10">详情显示</label> <input type="radio" name="radio-btn" /> <label class="fl pr10">列表显示</label></td>
+            </tr>-->
+            <tr>
+              <th><em class="red">*</em>发布渠道</th><td> <input type="checkbox" name="check-box"  wayid="0"/> <label class="fl pr10 lh30">人社门户</label>
+              <input type="checkbox" name="check-box"  wayid="1"/><label class="fl pr10 lh30">人力资源市场</label>  <input type="checkbox" name="check-box"  wayid="2"/><label class="fl pr10 lh30">App应用</label>
+            </td>
+          </tr>
+          <tr>
+            <th>推送渠道</th><td> <input type="checkbox" name="check-box"  wayid="3"/> <label class="fl pr10 lh30">App消息</label>
+            <input type="checkbox" name="check-box"  wayid="4"/><label class="fl pr10 lh30">微信公众号</label>  <input type="checkbox" name="check-box" wayid="5" /><label class="fl pr10 lh30">微博</label> <input type="checkbox" name="check-box"  wayid="6"/><label class="fl pr10 lh30">短信</label>
+          </td>
+        </tr>
+        <!--   <tr>
+          <th>封面</th>
+          <td><div class="fline"><a href="#" class="btn_primary bodu">浏览...</a> 未选择文件</div>
+          <div class="ftdf_01">图片建议尺寸：800像素 * 600像素</div></td>
+        </tr>-->
+        <tr>
+          <th><em class="red">*</em> 标题</th>
+          <td><input type="text" class="bodu inpt wid400" /></td>
+        </tr>
+        <tr>
+          <th>文章作者</th>
+          <td>陈晓晨</td>
+        </tr>
+        <tr>
+          <th><em class="red">*</em> 文章/消息类别</th>
+          <td>  <span class="addSSel fl ">
+            <span>政策法规</span>
+            <dl>
+              <dd><em>政策法规</em></dd>
+              <dd><em>新闻动态</em></dd>
+            </dl>
+            </span><!--input type="text" class="bodu inpt wid250" placeholder=""/--></td>
+          </tr>
+          <tr>
+            <th>文章摘要</th>
+            <td><textarea name="textarea" rows="3" class="bodu inptare wid250" style="height:60px" placeholder="请填写不多于120字的摘要"></textarea>
+              <!--<div class="ftdf_01"><span class="fr gray_f">0/120</span>选填，如果不填写会默认抓取正文前54个字</div>-->
+            </td>
+          </tr>
+          <tr>
+            <th><em class="red">*</em>文章正文</th>
+            <td><img src="images/tws_01.jpg" width="585" height="66"><textarea name="textarea" rows="3" class="bodu inptare wid250" style="height:100px" ></textarea>
+              <div class="clear"></div>
+              <!-- <input type="checkbox" name="check-box" /> <label class="fl pr10 lh30">原创链接</label>
+              <input type="checkbox" name="check-box" /><label class="fl pr10 lh30">申请原创声明</label>-->
+            </td>
+          </tr>
+        </table>
+        <div class="setting none">
+        <p class="subTit">发布配置【人社门户】</p>
+        <table width="100%" class="tble">
+          <tr>
+            <th>所属栏目</th>
+            <td><input type="text" class="bodu inpt wid120" /></td>
+            <th>文章模板</th>
+            <td> <span class="addSSel fl ">
+              <span>通用文章模板</span>
+              <dl>
+                <dd><em>通用文章模板</em></dd>
+              </dl>
+            </span></td>
+          </tr>
+          <tr>
+            <th>添加附件</th>
+            <td><div class="fline"><a href="#" class="btn_primary bodu">浏览...</a> 未选择文件</div></td>
+            <th>&nbsp;</th>
+            <td> &nbsp;</td>
+          </tr>
+        </table>
+        </div>
+        <div class="setting none">
+        <p class="subTit">发布配置【人力资源市场】</p>
+        <table width="100%" class="tble">
+          <tr>
+            <th>所属栏目</th>
+            <td><input type="text" class="bodu inpt wid120" /></td>
+            <th>文章模板</th>
+            <td> <span class="addSSel fl ">
+              <span>通用文章模板</span>
+              <dl>
+                <dd><em>通用文章模板</em></dd>
+              </dl>
+            </span></td>
+          </tr>
+          <tr>
+            <th>添加附件</th>
+            <td><div class="fline"><a href="#" class="btn_primary bodu">浏览...</a> 未选择文件</div></td>
+            <th>&nbsp;</th>
+            <td> &nbsp;</td>
+          </tr>
+        </table>
+        </div>
+        <div class="setting none">
+        <p class="subTit">发布配置【App应用】</p>
+        <table width="100%" class="tble">
+          <tr>
+            <th>所属栏目</th>
+            <td><input type="text" class="bodu inpt wid120" /></td>
+            <th>文章模板</th>
+            <td> <span class="addSSel fl ">
+              <span>通用文章模板</span>
+              <dl>
+                <dd><em>通用文章模板</em></dd>
+              </dl>
+            </span></td>
+          </tr>
+        </table>
+        </div>
+        <div class="setting none">
+        <p class="subTit">推送配置【App消息】</p>
+        <table width="100%" class="tble">
+          <tr>
+            <th><em class="red">*</em>消息模板</th>
+            <td> <span class="addSSel fl ">
+              <span>App消息模板1</span>
+              <dl>
+                <dd><em>App消息模板1</em></dd>
+                <dd><em>App消息模板2</em></dd>
+              </dl>
+            </span></td>
+          </tr>
+          <tr>
+            <th><em class="red">*</em>推送内容</th>
+            <td><textarea name="textarea" rows="3" class="bodu inptare wid250" style="height:60px"></textarea></td>
+          </tr>
+          <tr>
+            <th>推送URL</th>
+            <td><input type="text" class="bodu inpt wid300" /></td>
+          </tr>
+          <tr>
+            <th>目标群组</th>
+            <td><input type="text" class="bodu inpt wid300" /><span class="chooseGroup">选择群组</span></td>
+          </tr>
+          <tr>
+            <th>目标客户</th>
+            <td><div class="fline"><a href="#" class="btn_primary bodu">浏览...</a> 未选择文件</div></td>
+          </tr>
+          <tr>
+            <th>推送时间</th>
+            <td><input type="text" class="bodu inpt wid300" /></td>
+          </tr>
+        </table>
+      </div>
+      <div class="setting none">
+        <p class="subTit">推送配置【微信公众号】</p>
+        <table width="100%" class="tble">
+          <tr>
+            <th><em class="red">*</em>消息模板</th>
+            <td> <span class="addSSel fl ">
+              <span>消息模板</span>
+              <dl>
+                <dd><em>消息模板</em></dd>
+                <dd><em>详情模板</em></dd>
+              </dl>
+            </span></td>
+          </tr>
+           <tr>
+            <th><em class="red">*</em>发送公众号</th>
+            <td> <span class="addSSel fl ">
+              <span style="width:162px;background-position:162px center;">清远人力资源和社会保障局</span>
+              <dl>
+                <dd><em>清远人力资源和社会保障局</em></dd>
+              </dl>
+            </span></td>
+          </tr>
+          <tr>
+            <th><em class="red">*</em>添加封面</th>
+            <td><div class="fline"><a href="#" class="btn_primary bodu">浏览...</a> 未选择文件</div>
+            <div class="ftdf_01">图片建议尺寸：800像素 * 600像素</div></td>
+          </tr>
+          <tr>
+            <th>推送次数</th>
+            <td><input type="text" class="bodu inpt wid300" /></td>
+          </tr>
+          <tr>
+            <th>推送时间</th>
+            <td><input type="text" class="bodu inpt wid300" /></td>
+          </tr>
+          <tr>
+            <th>禁止推送时间</th>
+            <td> <input type="text" class="tabipt bodu bgdate" style="width:110px;"/>
+            </span> <span> 至 <input type="text" class="tabipt bodu bgdate"  style="width:110px; "/></td>
+          </tr>
+          <tr>
+            <th>原文链接</th>
+            <td><input type="text" class="bodu inpt wid300" /></td>
+          </tr>
+        </table>
+      </div>
+      <div class="setting none" >
+        <p class="subTit">推送配置【微博】</p>
+        <table width="100%" class="tble">
+          <tr>
+            <th><em class="red">*</em>消息模板</th>
+            <td> <span class="addSSel fl ">
+              <span>头条文章模板</span>
+              <dl>
+                <dd><em>头条文章模板</em></dd>
+              </dl>
+            </span></td>
+          </tr>
+          <tr>
+            <th><em class="red">*</em>添加封面</th>
+            <td><div class="fline"><a href="#" class="btn_primary bodu">浏览...</a> 未选择文件</div>
+            <div class="ftdf_01">图片建议尺寸：800像素 * 600像素</div></td>
+          </tr>
+          <tr>
+            <th>推送时间</th>
+            <td> <input type="text" class="tabipt bodu bgdate" style="width:110px;"/>
+            </span> <span> 至 <input type="text" class="tabipt bodu bgdate"  style="width:110px; "/></td>
+          </tr>
+        </table>
+       </div>
+       <div class="setting none">
+        <p class="subTit">推送配置【短信】</p>
+        <table width="100%" class="tble">
+          <tr>
+            <th><em class="red">*</em>消息模板</th>
+            <td> <span class="addSSel fl ">
+              <span>短信模板1</span>
+              <dl>
+                <dd><em>短信模板1</em></dd>
+                <dd><em>短信模板2</em></dd>
+              </dl>
+            </span></td>
+          </tr>
+          <tr>
+            <th><em class="red">*</em>短信内容</th>
+            <td><textarea name="textarea" rows="3" class="bodu inptare wid250" style="height:60px"></textarea></td>
+          </tr>
+          <tr>
+            <th>目标群组</th>
+            <td><input type="text" class="bodu inpt wid300" /><span class="chooseGroup">选择群组</span></td>
+          </tr>
+          <tr>
+            <th>目标客户</th>
+            <td><div class="fline"><a href="#" class="btn_primary bodu">浏览...</a> 未选择文件</div></td>
+          </tr>
+          <tr>
+            <th>推送时间</th>
+            <td> <input type="text" class="tabipt bodu bgdate" style="width:110px;"/>
+            </span> <span> 至 <input type="text" class="tabipt bodu bgdate"  style="width:110px; "/></td>
+          </tr>
+          
+        </table>
+        </div>
+      </div>
+      <p class="tc pt10">
+        <a href="javascript:void(0)" class="btn bodu pad4 mr10">保存</a>
+        <a onclick="window.open('preview.html')"class="btn bodu pad4 mr10">预览</a><a href="javascript:void(0)" class="btn  btngray bodu pad4">返回</a>
+      </p>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>

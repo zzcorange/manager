@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<title>信息发布平台</title>
+
+<link href="css/preview.css" rel="stylesheet" />
+
+<script src="js/jquery.js"></script>
+
+<script src="js/jquery.cookie.js"></script>
+
+<script src="js/com.js" charset="utf-8"></script>
+
+<script src="js/nav.js"></script>
+
+<!--<script src="js/setHeight.js"></script>-->
+
+</head>
+
+
+
+<body>
+  <div class="header">
+    <img src="./images/logo2.png" alt="" class="fl">
+    <ul class="fr">
+      <li class="cur"><a href="pre_mh.html" target="rightIfr">人社门户</a></li>
+      <li><a href="pre_mh.html" target="rightIfr">人力资源市场</a></li>
+      <li><a href="pre_appyy.html" target="rightIfr">App应用</a></li>
+      <li><a href="pre_appxx.html" target="rightIfr">App消息</a></li>
+      <li><a href="pre_wx.html" target="rightIfr">微信公众号</a></li>
+      <li><a href="pre_wb.html" target="rightIfr">微博</a></li>
+      <li><a href="pre_dx.html" target="rightIfr">短信</a></li>
+    </ul>
+  </div>
+  <div class="rightc">
+
+    <div class="rigcon">
+
+      <iframe width="100%" frameborder="0" src="pre_mh.html" name="rightIfr" scrolling="auto" ></iframe>
+
+    </div>
+
+  </div>
+  <script>
+  $(function () {
+      var h=$(window).height()-$('.header').height()-1;
+  $('.rightc').height(h);
+  $('.rightc iframe').height(h-5);
+
+  $('.header ul li').click(function() {
+    $(this).addClass('cur').siblings('li').removeClass('cur');
+  });
+  })
+
+  </script>
+</body>
+
+</html>
+

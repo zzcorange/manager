@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="GB2312" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>信息发布平台</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/com.js"></script>
+    <script src="js/nav.js"></script>
+  </head>
+  <body>
+    <div class="ntitl"> <span class="pl10"><img src="images/home.png" class="ime"/><a href="#">首页</a> / <a href="#">炬阵管理</a> / <a href="#">公众号编辑</a> /</span> </div>
+    <div class="rigco_c">
+    
+      <div class="clear pt10"></div>
+      <div class="bgwhite twzsx">
+        <div class="tle"><img src="images/title_ico.jpg" class="img"/>图文管理</div>
+        <div class="clear"></div>
+        
+        <div class="search">
+          文章状态
+          <span class="addSSel" style="display:inline-block;vertical-align: middle;">
+							<span>综合动态</span>
+							<dl>
+								<dd><em>全图类</em></dd>
+                                <dd><em>纯文章</em></dd>
+								<dd><em>其他</em></dd>
+							</dl>
+						</span>
+          <span>操作时间</span>
+          <a class="time" href="#">今天</a>
+          <a class="time"href="#">3天</a>
+          <a class="time curTime"href="#">7天</a>
+          <span id="shoq" class="none"><a class="time" href="#">1个月</a>
+          <a class="time"href="#">3个月</a><a class="time" href="#">1年内</a>
+          <a class="time"href="#">1年以前</a></span>
+             <a href="javascript:void(0)" class="moret">更多<em><img src="images/down1.jpg" /></em></a>
+                         <a href="javascript:void(0)" class="moret1 none">收起<em><img src="images/up1.jpg" /></em></a>
+          <span class="fr">
+            <button>查询</button>
+            <button>清空</button>
+          </span>
+          <div class="clear"></div>
+        </div>
+        
+        <div class="oper">
+          <button>新增图文</button>
+          <button>批量删除</button>
+          <span class="fr">已选中<span>0</span>项</span>
+          <div class="clear"></div>
+        </div>
+        <table class="twList">
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>首图</td>
+            <td>标题</td>
+            <td>状态</td>
+            <td>操作人</td>
+            <td>操作时间</td>
+            <td>发布对象</td>
+            <td>操作</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><img src="./images/imtwimg.jpg" alt=""></td>
+            <td>清远人社局组织召开留学人员座谈会</td>
+            <td>草稿</td>
+            <td>张东</td>
+            <td>2016-09-09 12:00:00</td>
+            <td>清远人社</td>
+             <td><img src="images/tw_02.jpg" alt=""> <img src="images/tw_03.jpg" alt=""> <img src="images/sanc.png" alt="删除"></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><img src="./images/imtwimg.jpg" alt=""></td>
+            <td>清远人社局组织召开全市人社工作推进会</td>
+            <td>待审核</td>
+            <td>张东</td>
+            <td>2016-09-09 12:00:00</td>
+            <td>清远人社</td>
+            <td><img src="images/tw_02.jpg" alt=""> <img src="images/tw_03.jpg" alt=""> <img src="images/sanc.png" alt="删除"></td>
+          </tr>
+        </table>
+        <div class="pages">
+          <span>
+            显示
+            <select name="" id="" class="inpt2"><option value="">50</option></select>
+            条，共129条
+            <span class="fr">
+              <a href=""><首页</a>
+              <a href=""><上一页</a>
+              <span style="color:#36a3ff;">3</span>
+              <a href="">下一页></a>
+              <a href="">末页></a>
+              <input type="text" class="inpt"> >
+            </span>
+          </span>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <script src="js/index.js"></script>
+    </body>
+  </html>

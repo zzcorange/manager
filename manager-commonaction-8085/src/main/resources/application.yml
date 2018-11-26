@@ -1,0 +1,9 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: manager-commonaction
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>信息发布平台</title>
+    <link rel="stylesheet" href="css/easyui.css">
+      <link rel="stylesheet" href="css/tree.css">
+     <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/com.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/jquery.easyui.min.js"></script>
+    <style>
+        .twzsx .search input[type='checkbox']{margin-left:5px;}
+        .twzsx .search input[type='text']{margin-right: 5px;}
+        .twzsx .search .searchTit{width: 50px;}
+        .addSSel span{width: 100px;background: #fff url("./images/ico_arrow6.gif") no-repeat 100px center;}
+        .addSSel dl{min-width:114px;}
+    </style>
+  </head>
+  <body>
+    <div class="ntitl"> <span class="pl10"><img src="images/home.png" class="ime"/><a href="#">首页</a> / 信息发布 / 文章管理 </div>
+ <div class="lmtree fl">
+    <ul class="easyui-tree" data-options="lines:true">
+        <li>
+            <span>人社门户</span>
+        
+                    <ul>
+                        <li><span>首页</span></li>
+                        <li><span>工作动态</span></li>
+                        <li><span>政策法规</span></li>
+                        <li><span>政务公开</span></li>
+                        <li><span>网上办事</span></li>
+                        <li><span>互动交流</span></li>
+                        <li><span>专题专栏</span></li>
+                    </ul>
+                
+        </li>
+        <li>
+          <span>在线人力资源市场</span>
+          <ul>
+              <li><span>首页</span></li>
+              <li><span>个人求职</span></li>
+              <li><span>企业招聘</span></li>
+              <li><span>毕业生联盟</span></li>
+              <li><span>人事代理</span></li>
+              <li><span>人才培训</span></li>
+              <li><span>职称申报</span></li>
+              <li><span>学历认证</span></li>
+              <li><span>人才派遣</span></li>
+          </ul>
+        </li>
+        <li>
+          <span>人社APP</span>
+          <ul>
+              <li><span>政务公开</span></li>
+              <li><span>办事指南</span></li>
+              <li><span>网上社保</span></li>
+          </ul>
+        </li>
+    </ul>
+ </div>
+    <div class="rigco_c fl" style="width:78%;">
+      <div class="clear pt10"></div>
+      <div class="bgwhite twzsx">
+        <div class="tle"><img src="images/title_ico.jpg" class="img"/>文章管理</div>
+        <div class="clear"></div>
+        
+        <div class="search" style="height:130px;">
+          <span class="searchTit">文章标题</span><input type="text" style="width:100px;">
+          
+          <span class="searchTit"> 文章类别</span>
+          <span class="addSSel" style="display:inline-block;vertical-align: middle;">
+            <span>全部</span>
+            <dl>
+              <dd><em>全部</em></dd>
+              <dd><em>新闻动态</em></dd>
+            </dl>
+          </span>
+          <span class="searchTit">    状态</span>
+          <span class="addSSel" style="display:inline-block;vertical-align: middle;">
+            <span>全部</span>
+            <dl>
+              <dd><em>全部</em></dd>
+              <dd><em>预发布</em></dd>
+            </dl>
+          </span>
+          <span class="searchTit">发布人</span><input type="text" style="width:100px;">
+          <span class="">
+            <button>查询</button>
+            <button>清空</button>
+          </span>
+          <span class="searchTit">发布渠道</span>
+          <input type="checkbox" name="ways" value="">App消息
+          <input type="checkbox" name="ways" value="">微信公众号
+          <input type="checkbox" name="ways" value="">微博
+          <input type="checkbox" name="ways" value="">短信
+          
+          <span class="searchTit" style="margin-left:25px;">发布时间</span><input type="text" style="width:160px;margin-right
+          :10px;">—<input type="text" style="width:160px;">
+          
+          <div class="clear"></div>
+        </div>
+        
+        <div class="oper">
+          <button onclick="window.location.href='wzgl_add.html'">新增</button>
+          <button>修改</button>
+          <button>删除</button>
+        </div>
+        <table class="twList" style="text-align:center;">
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>文章标题</td>
+            <td>文章类别</td>
+            <td>文章模板</td>
+            <td>状态</td>
+            <td>发布渠道</td>
+            <td>发布人</td>
+            <td>操作时间</td>
+            <td>操作</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>清远人社局召开留学人员座谈会</td>
+            <td>新闻动态</td>
+            <td>通用文章模板</td>
+            <td>预发布</td>
+            <td>网站APP</td>
+            <td>小明</td>
+            <td>2016-11-11</td>
+            <td>&nbsp;</td>
+          </tr>
+           <tr>
+            <td><input type="checkbox"></td>
+            <td>清远人社局召开留学人员座谈会</td>
+            <td>新闻动态</td>
+            <td>通用文章模板</td>
+            <td>预发布</td>
+            <td>网站APP</td>
+            <td>小明</td>
+            <td>2016-11-11</td>
+            <td>&nbsp;</td>
+          </tr>
+           <tr>
+            <td><input type="checkbox"></td>
+            <td>清远人社局召开留学人员座谈会</td>
+            <td>新闻动态</td>
+            <td>通用文章模板</td>
+            <td>预发布</td>
+            <td>网站APP</td>
+            <td>小明</td>
+            <td>2016-11-11</td>
+            <td>&nbsp;</td>
+          </tr>
+           <tr>
+            <td><input type="checkbox"></td>
+            <td>清远人社局召开留学人员座谈会</td>
+            <td>新闻动态</td>
+            <td>通用文章模板</td>
+            <td>预发布</td>
+            <td>网站APP</td>
+            <td>小明</td>
+            <td>2016-11-11</td>
+            <td>&nbsp;</td>
+          </tr>
+          
+        </table>
+        <div class="pages">
+          <span>
+            显示
+            <select name="" id="" class="inpt2"><option value="">50</option></select>
+            条，共129条
+            <span class="fr">
+              <a href=""><首页</a>
+              <a href=""><上一页</a>
+              <span style="color:#36a3ff;">3</span>
+              <a href="">下一页></a>
+              <a href="">末页></a>
+              <input type="text" class="inpt"> >
+            </span>
+          </span>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+      <script src="js/index.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+
+.logtop{width:1200px; margin:0 auto; padding:15px 0;}
+.logtop .lianxi{ float:right;padding:10px 0; font-size:10px;}
+.logtop .lianxi a{ padding-left:20px; height:20px; text-decoration:none; color:#999; font-size:13px;}
+.logtop .lianxi a:hover{color:#0e4da9}
+.logtop .lianxi a.help{background:url(../images/log_01.jpg) no-repeat left center;}
+.logtop .lianxi a.catus{background:url(../images/log_02.jpg) no-repeat left center;}
+.flexslider{position:relative;height:452px;overflow:hidden;background:url(../images/loading.gif) 50% no-repeat;}
+.slides{position:relative;z-index:1;}
+.slides li{height:452px;}
+.slides .bg01{background:url(../images/sidd_bg.png) left top repeat-x; z-index:4; position:absolute; width:100%; height:7px;}
+.flex-control-nav{position:absolute;bottom:20px;z-index:2;width:100%;text-align:center;}
+.flex-control-nav li{display:inline-block;width:24px;height:6px;margin:0 2px;*display:inline;zoom:1;}
+.flex-control-nav a{display:inline-block;width:24px;height:6px;overflow:hidden;background:#CCC;cursor:pointer;}
+.flex-control-nav .flex-active{background:#fff;}
+
+.bom{ color:#999; font-size:12px; line-height:24px;  text-align:center; padding-top:10px;}
+.logcon{width:1200px; height:auto; padding-top:50px; margin:0 auto ; z-index:10; position:relative;}
+
+.logtbl{ background-color:#FFF; padding:20px; height:320px;border-radius:8px; -webkit-border-radius:8px; -ms-border-radius:8px; -o-border-radius:8px;width:330px; float:right;
+ -moz-border-radius:8px;}
+ .logtbl h2{ font-size:20px; color:#b8b8b8;}
+.logtbl ul{ width:100%; margin-top:22px;}
+.logtbl ul li{  height:35px; margin:9px 0; list-style:none; width:100%; position:relative;}
+.logtbl ul li .tbim{ position:absolute; right:10px; top:10px;}
+.logtbl p.zc{ text-align:right; }
+.logtbl p.zc a{color:#0e4aa2; font:14px/30px "Microsoft YaHei";text-decoration:none;}
+.tblipt{ height:33px; line-height:33px; color:#666; border:0px solid #FFF; width:99%; font-size:15px; background-color:#eee; border-radius:5px; text-indent:8px;}
+.tblipt:hover{border:0}
+.tblipt2{ height:30px; line-height:30px; color:#333; border:0px solid #FFF; width:100%; font-size:15px; background:none;}
+.tblise{background:url(../images/down1.jpg) no-repeat 97% center;  }
+.selectDropDown {display:none;z-index: 1;background: #fff;position: absolute;left: 0;top:35px;border: 1px solid #dcdcdc;padding: 4px; width:96%}
+.logtbl ul li .selectDropDown li{ display:inline-block; line-height:24px; border:none; height:24px; margin-bottom:0;}
+.selectDropDown li a{color:#333; font-size:14px; cursor:pointer;}
+
+.wid80px{ width:80px;}
+.wid80{ width:108px;}
+.logtbl ul p{ text-align:center; line-height:24px;}
+
+.admts{ color:#f97806; font-size:12px; font-family:"宋体";}
+
+.logbtn{  width:100%; height:43px; line-height:43px; display:inline-block; text-decoration:none; letter-spacing:10px;border-radius:3px; -webkit-border-radius:3px; -ms-border-radius:3px; -o-border-radius:3px;
+ -moz-border-radius:3px;
+background-image:-ms-linear-gradient(top,#0e4da9,#0e4aa2); background-image:-webkit-linear-gradient(top,#0e4da9,#0e4aa2); 
+background-image:-moz-linear-gradient(top,#0e4da9,#0e4aa2);
+ background-image:-o-linear-gradient(top,#0e4da9,#0e4aa2);
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0e4da9', endColorstr='#0e4aa2');
+ -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0e4da9', endColorstr='#0e4aa2'); overflow:hidden }
+ .logbtn .transition{position: relative;top:0%;-webkit-transition: all 0.4s linear;-moz-transition: all 0.4s linear;-o-transition: all 0.4s linear;-ms-transition: all 0.4s linear;transition: all 0.4s linear; display:block; color:#FFF; font-size:17px; width:100%; text-align:center; height:43px; line-height:43px;}
+
+.logbtn:hover{background:#0e4aa2;}
+.logbtn:hover .transition{top:-200%;}
+#mainBody{}
+.cloud{position:absolute;top:0px;left:0px;width:100%;height:100%;background:url("../images/cloud.png") no-repeat;z-index:1;opacity:0.8;} 
+.cloud2{background:url("../images/yun2.png") no-repeat;position:absolute;top:0px;left:0px;width:100%;height:100%;z-index:9;opacity:0.8;}    
+#cloud2{z-index:3;}
+@media only screen and (max-width:1200px) {
+.logtop{width:100%; }
+.logtop,.bom{width:100%; text-align:center }
+.logtop .lianxi{display:none}
+.logtbl{float:none; margin:0 auto;}
+.logcon{ width:100%; z-index:10}
+}

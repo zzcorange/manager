@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>信息发布平台</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/com.js"></script>
+    <script src="js/nav.js"></script>
+  </head>
+  <body>
+    <div class="ntitl"> <span class="pl10"><img src="images/home.png" class="ime"/><a href="#">首页</a> / 审核管理 / 审核管理 </div>
+    <div class="rigco_c">
+      <div class="clear pt10"></div>
+      <div class="bgwhite twzsx">
+        <div class="tle"><img src="images/title_ico.jpg" class="img"/>审核管理</div>
+        <div class="clear"></div>
+        
+        <div class="search" style="height:130px;">
+         <span class="searchTit"> 审核类型</span>
+          <span class="addSSel" style="display:inline-block;vertical-align: middle;">
+            <span>栏目新增</span>
+            <dl>
+              <dd><em>栏目新增</em></dd>
+              <dd><em>栏目删除</em></dd>
+            </dl>
+          </span>
+
+         <span class="searchTit"> 对象类型</span>
+          <span class="addSSel" style="display:inline-block;vertical-align: middle;">
+            <span>栏目</span>
+            <dl>
+              <dd><em>栏目</em></dd>
+              <dd><em>文章</em></dd>
+            </dl>
+          </span>
+           <span class="searchTit"> 审核对象</span><input type="text" style="width:350px;">
+          <span class="">
+            <button>查询</button>
+            <button>清空</button>
+          </span>
+          
+         <span class="searchTit">    状态</span>
+          <span class="addSSel" style="display:inline-block;vertical-align: middle;">
+            <span>待审核</span>
+            <dl>
+              <dd><em>待审核</em></dd>
+              <dd><em>通过</em></dd>
+            </dl>
+          </span>
+          
+             <span class="searchTit"> 申请人</span><input type="text" style="width:130px;">
+             <span class="searchTit"> 申请开始时间</span><input type="text" style="width:110px;margin-right:10px;">
+             <span class="searchTit"> 申请结束时间</span><input type="text" style="width:110px;">
+
+             
+          <div class="clear"></div>
+        </div>
+        
+        <div class="oper">
+          <button>审核</button>
+          <button>批量审核</button>
+         
+        </div>
+        <table class="twList" style="text-align:center;">
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>审核对象</td>
+            <td>审核类型</td>
+            <td>对象类型</td>
+            <td>状态</td>
+            <td>审核人</td>
+            <td>审核时间</td>
+            <td>审核意见</td>
+            <td>申请人</td>
+            <td>申请时间</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>政策法规</td>
+            <td>栏目新增</td>
+            <td>栏目</td>
+            <td>审核通过</td>
+            <td>张三</td>
+            <td>2016-01-02</td>
+            <td>通过</td>
+            <td>李四</td>
+            <td>2016-01-01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>政策法规</td>
+            <td>栏目新增</td>
+            <td>栏目</td>
+            <td>审核通过</td>
+            <td>张三</td>
+            <td>2016-01-02</td>
+            <td>通过</td>
+            <td>李四</td>
+            <td>2016-01-01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>政策法规</td>
+            <td>栏目新增</td>
+            <td>栏目</td>
+            <td>审核通过</td>
+            <td>张三</td>
+            <td>2016-01-02</td>
+            <td>通过</td>
+            <td>李四</td>
+            <td>2016-01-01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>政策法规</td>
+            <td>栏目新增</td>
+            <td>栏目</td>
+            <td>审核通过</td>
+            <td>张三</td>
+            <td>2016-01-02</td>
+            <td>通过</td>
+            <td>李四</td>
+            <td>2016-01-01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>政策法规</td>
+            <td>栏目新增</td>
+            <td>栏目</td>
+            <td>审核通过</td>
+            <td>张三</td>
+            <td>2016-01-02</td>
+            <td>通过</td>
+            <td>李四</td>
+            <td>2016-01-01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>政策法规</td>
+            <td>栏目新增</td>
+            <td>栏目</td>
+            <td>审核通过</td>
+            <td>张三</td>
+            <td>2016-01-02</td>
+            <td>通过</td>
+            <td>李四</td>
+            <td>2016-01-01</td>
+          </tr>
+        </table>
+        <div class="pages">
+          <span>
+            显示
+            <select name="" id="" class="inpt2"><option value="">50</option></select>
+            条，共129条
+            <span class="fr">
+              <a href=""><首页</a>
+              <a href=""><上一页</a>
+              <span style="color:#36a3ff;">3</span>
+              <a href="">下一页></a>
+              <a href="">末页></a>
+              <input type="text" class="inpt"> >
+            </span>
+          </span>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <script src="js/index.js"></script>
+    </body>
+  </html>

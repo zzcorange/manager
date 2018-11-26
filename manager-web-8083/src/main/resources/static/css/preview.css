@@ -1,0 +1,28 @@
+.fl{float: left;}
+.fr{float: right;}
+.clear{clear: both;}
+.none{display: none;}
+*{margin: 0;padding: 0;font-family: Microsoft YaHei;}
+
+.header{height: 50px;line-height: 50px;border-bottom: 1px solid #ccc;}
+.header img{display: inline-block;vertical-align: middle;margin-left: 30px;}
+.header ul {margin-right: 25px;}
+.header ul a{text-decoration: none;color: #000;}
+.header ul li{display: block;float: left;list-style: none;padding: 0px 15px;}
+.header ul  .cur{background-color: #36a3ff;color: #fff;}
+.header ul  .cur a{color: #fff;}
+
+
+
+/*----门户文章----*/
+.passage{width: 1200px;margin: 0 auto;margin-bottom: 50px;}
+.passage .title{width: 100%;text-align: center;color: #666;font-size: 24px;margin: 25px auto 15px auto;}
+.passage .publishInfo{width: 1000px;text-align: center;color: #999;font-size: 13px;    margin: 0px auto 25px auto;display: block;height: 30px;}
+.passage .content{width: 1000px;margin: 0 100px;text-indent: 32px;line-height: 30px;color: #666;}
+.passage img{margin: 20px auto;display: block;}
+
+.simCellphone{width: 100%;background: url(../images/landscape.png) no-repeat;height: 1000px;background-position: center center;}
+.simCellphone .content{width: 387px;height: 794px;background: url(../images/cellphone.png) no-repeat;margin: 30px auto;position: relative;}
+.simCellphone .content .phoneHead{position: absolute;top: 82px;left: 18px;}
+
+.passage .publishInfo img{display: inline-block;vertical-align: middle;margin: 0px;}

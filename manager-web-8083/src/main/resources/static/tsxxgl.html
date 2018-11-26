@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>信息发布平台</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/com.js"></script>
+    <script src="js/nav.js"></script>
+    <style>
+    .twzsx .twList tr td img{margin: 0px 8px;}
+    .twzsx .twList tr:nth-child(1){font-weight: bold;}
+    </style>
+  </head>
+  <body>
+    <div class="ntitl"> <span class="pl10"><img src="images/home.png" class="ime"/><a href="#">首页</a> / 推送管理 / 推送消息管理 </div>
+    <div class="rigco_c">
+      <div class="clear pt10"></div>
+      <div class="bgwhite twzsx">
+        <div class="tle"><img src="images/title_ico.jpg" class="img"/>推送消息管理</div>
+        <div class="clear"></div>
+        
+        <div class="search" style="height:130px;">
+          <span class="searchTit">消息标题</span><input type="text" style="width:280px;">
+          
+          <span class="searchTit"> 消息类型</span>
+          <span class="addSSel" style="display:inline-block;vertical-align: middle;">
+            <span>全部</span>
+            <dl>
+              <dd><em>全部</em></dd>
+              <dd><em>其他</em></dd>
+            </dl>
+          </span>
+          <span class="searchTit">    状态</span>
+          <span class="addSSel" style="display:inline-block;vertical-align: middle;">
+            <span>待审核</span>
+            <dl>
+              <dd><em>待审核</em></dd>
+              <dd><em>通过</em></dd>
+            </dl>
+          </span>
+          <span class="fr">
+            <button>查询</button>
+            <button>清空</button>
+          </span>
+          <span class="searchTit">推送渠道</span>
+          <input type="checkbox" name="ways" value="">App消息
+          <input type="checkbox" name="ways" value="">微信公众号
+          <input type="checkbox" name="ways" value="">微博
+          <input type="checkbox" name="ways" value="">短信
+          
+          <span class="searchTit"> 推送时间</span><input type="text" style="width:160px;margin-right
+          :10px;">—<input type="text" style="width:160px;">
+          
+          <div class="clear"></div>
+        </div>
+        
+        <div class="oper">
+          <button style="width:70px;" onclick="window.location.href='tsgl_add.html'">新增</button>
+          <button style="width:70px;">修改</button>
+          <button style="width:70px;">删除</button>
+          <button style="width:70px;">启动</button>
+          <button style="width:70px;">暂停</button>
+        </div>
+        <table class="twList" style="text-align:center;">
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>消息标题</td>
+            <td>消息类别</td>
+            <td>消息模板</td>
+            <td>状态</td>
+            <td>推送渠道</td>
+            <td>推送人</td>
+            <td>操作时间</td>
+            <td>推送时间</td>
+            <td>操作</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>清远市人社局APP正式上线</td>
+            <td>其他</td>
+            <td>短信模板1</td>
+            <td>已推送</td>
+            <td>短信</td>
+            <td>小红</td>
+            <td>2016-01-11</td>
+            <td>2016-01-12</td>
+            <td>
+              <img src="./images/begin.png" alt="">
+              <img src="./images/pause.png" alt="">
+              <img src="./images/more2.png" alt="">
+              <img src="./images/send.png" alt="">
+            </td>
+            
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>清远市人社局APP正式上线</td>
+            <td>其他</td>
+            <td>短信模板1</td>
+            <td>已推送</td>
+            <td>短信</td>
+            <td>小红</td>
+            <td>2016-01-11</td>
+            <td>2016-01-12</td>
+            <td>
+              <img src="./images/begin.png" alt="">
+              <img src="./images/pause.png" alt="">
+              <img src="./images/more2.png" alt="">
+              <img src="./images/send.png" alt="">
+            </td>
+            
+          </tr>
+          <tr>
+            <td><input type="checkbox"> </td>
+            <td>清远市人社局APP正式上线</td>
+            <td>其他</td>
+            <td>短信模板1</td>
+            <td>已推送</td>
+            <td>短信</td>
+            <td>小红</td>
+            <td>2016-01-11</td>
+            <td>2016-01-12</td>
+            <td>
+              <img src="./images/begin.png" alt="">
+              <img src="./images/pause.png" alt="">
+              <img src="./images/more2.png" alt="">
+              <img src="./images/send.png" alt="">
+            </td>
+            
+          </tr>
+          <tr>
+            <td> <input type="checkbox"> </td>
+            <td>清远市人社局APP正式上线</td>
+            <td>其他</td>
+            <td>短信模板1</td>
+            <td>已推送</td>
+            <td>短信</td>
+            <td>小红</td>
+            <td>2016-01-11</td>
+            <td>2016-01-12</td>
+            <td>
+              <img src="./images/begin.png" alt="">
+              <img src="./images/pause.png" alt="">
+              <img src="./images/more2.png" alt="">
+              <img src="./images/send.png" alt="">
+            </td>
+            
+          </tr>
+          <tr>
+            <td><input type="checkbox"> </td>
+            <td>清远市人社局APP正式上线</td>
+            <td>其他</td>
+            <td>短信模板1</td>
+            <td>已推送</td>
+            <td>短信</td>
+            <td>小红</td>
+            <td>2016-01-11</td>
+            <td>2016-01-12</td>
+            <td>
+              <img src="./images/begin.png" alt="">
+              <img src="./images/pause.png" alt="">
+              <img src="./images/more2.png" alt="">
+              <img src="./images/send.png" alt="">
+            </td>
+            
+          </tr>
+          <tr>
+            <td> <input type="checkbox">  </td>
+            <td>清远市人社局APP正式上线</td>
+            <td>其他</td>
+            <td>短信模板1</td>
+            <td>已推送</td>
+            <td>短信</td>
+            <td>小红</td>
+            <td>2016-01-11</td>
+            <td>2016-01-12</td>
+            <td>
+              <img src="./images/begin.png" alt="">
+              <img src="./images/pause.png" alt="">
+              <img src="./images/more2.png" alt="">
+              <img src="./images/send.png" alt="">
+            </td>
+          </tr>
+           <tr>
+            <td> <input type="checkbox">  </td>
+            <td>清远市人社局APP正式上线</td>
+            <td>其他</td>
+            <td>短信模板1</td>
+            <td>已推送</td>
+            <td>短信</td>
+            <td>小红</td>
+            <td>2016-01-11</td>
+            <td>2016-01-12</td>
+            <td>
+              <img src="./images/begin.png" alt="">
+              <img src="./images/pause.png" alt="">
+              <img src="./images/more2.png" alt="">
+              <img src="./images/send.png" alt="">
+            </td>
+          </tr>
+           <tr>
+            <td> <input type="checkbox">  </td>
+            <td>清远市人社局APP正式上线</td>
+            <td>其他</td>
+            <td>短信模板1</td>
+            <td>已推送</td>
+            <td>短信</td>
+            <td>小红</td>
+            <td>2016-01-11</td>
+            <td>2016-01-12</td>
+            <td>
+              <img src="./images/begin.png" alt="">
+              <img src="./images/pause.png" alt="">
+              <img src="./images/more2.png" alt="">
+              <img src="./images/send.png" alt="">
+            </td>
+          </tr>
+           <tr>
+            <td> <input type="checkbox">  </td>
+            <td>清远市人社局APP正式上线</td>
+            <td>其他</td>
+            <td>短信模板1</td>
+            <td>已推送</td>
+            <td>短信</td>
+            <td>小红</td>
+            <td>2016-01-11</td>
+            <td>2016-01-12</td>
+            <td>
+              <img src="./images/begin.png" alt="">
+              <img src="./images/pause.png" alt="">
+              <img src="./images/more2.png" alt="">
+              <img src="./images/send.png" alt="">
+            </td>
+          </tr>
+           <tr>
+            <td> <input type="checkbox">  </td>
+            <td>清远市人社局APP正式上线</td>
+            <td>其他</td>
+            <td>短信模板1</td>
+            <td>已推送</td>
+            <td>短信</td>
+            <td>小红</td>
+            <td>2016-01-11</td>
+            <td>2016-01-12</td>
+            <td>
+              <img src="./images/begin.png" alt="">
+              <img src="./images/pause.png" alt="">
+              <img src="./images/more2.png" alt="">
+              <img src="./images/send.png" alt="">
+            </td>
+          </tr>
+        </table>
+        <div class="pages">
+          <span>
+            显示
+            <select name="" id="" class="inpt2"><option value="">50</option></select>
+            条，共129条
+            <span class="fr">
+              <a href=""><首页</a>
+              <a href=""><上一页</a>
+              <span style="color:#36a3ff;">3</span>
+              <a href="">下一页></a>
+              <a href="">末页></a>
+              <input type="text" class="inpt"> >
+            </span>
+          </span>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <script src="js/index.js"></script>
+    </body>
+  </html>
