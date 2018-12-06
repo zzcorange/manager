@@ -6,14 +6,25 @@ import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 @Component
-public class LoginFilter extends ZuulFilter {
+@PropertySource("classpath:properties/login.properties")
+public class LoginFilter extends ZuulFilter implements InitializingBean {
     private static Logger log= LoggerFactory.getLogger(LoginFilter.class);
+    @Value("${login.nottoken}")
+    private  String notNeedToken;
+
+    private static ArrayList<String> notNeedTokenList ;
 
     @Override
     public String filterType() {
@@ -34,19 +45,40 @@ public class LoginFilter extends ZuulFilter {
     public Object run() throws ZuulException {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-        log.info(String.format("%s >>> %s",request.getMethod(),request.getRequestURL().toString()));
+        log.info(String.format("%s >>> %s",request.getMethod(),request.getRequestURL().toString())+">>>"+request.getRequestURI());
         Object acceptToken = request.getParameter("token");
-        if(!request.getRequestURI().contains("/common/")&&acceptToken == null){
+        if(!isNotNeedToken(request.getRequestURI())&&acceptToken == null){
             log.warn("token is empty");
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(401);
             try{
-                ctx.getResponse().getWriter().write("token is empty");
+                if(request.getRequestURI().endsWith("html"))
+                    ctx.getResponse().sendRedirect("http://localhost:8080/web/login.html");
+                else
+                    ctx.getResponse().getWriter().write("token is empty");
+
             }catch (Exception e){
 
             }
         }
-
+        System.out.println("通过验证");
         return null;
+    }
+    public boolean isNotNeedToken(String url){
+        if(notNeedTokenList.size()==0) return false;
+        for(String temp : notNeedTokenList){
+            if(url.matches(temp)){
+                return  true;
+            }
+        }
+        return false;
+    }
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        if(notNeedToken!=null&&!"".equals(notNeedToken)){
+            notNeedTokenList = new ArrayList<String>(Arrays.asList(notNeedToken.split(";")));
+        }else
+            notNeedTokenList = new ArrayList<>();
+        System.out.println("notNeedTokenList----》"+notNeedTokenList.toString());
     }
 }

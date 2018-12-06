@@ -5,7 +5,7 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8081/eureka/
 server:
-  port: 8084
+  port: 8080
 spring:
   application:
     name: manager-zuul
@@ -16,8 +16,16 @@ spring:
  #   baseurl: http://localhost:9411
 zuul:
   routes:
-    api-a:
-      path: /api-a/**
+    web:
+      path: /web/**
+      serviceId: manager-web
+    database:
+      path: /database/**
       serviceId: manager-database
-
+    redis:
+      path: /redis/**
+      serviceId: manager-redis
+    common:
+      path: /common/**
+      serviceId: manager-common
 debug: true

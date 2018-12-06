@@ -9,7 +9,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/redis")
 @RestController
 @PropertySource("classpath:redisProperties.properties")
 public class LoginController {
@@ -42,13 +41,13 @@ public class LoginController {
         System.out.println("UserName="+userName+";token="+token);
        String key = loginPrefix+userName;
        if(redisUtil.isExists(key)){
-           return "1";
+           return redisUtil.select(key).toString();
        }
        try{
             redisUtil.insert(key,token,exp);
-            return "1";
+            return token;
        }catch (Exception e){
-           return "0";
+           return "-1";
        }
     }
 

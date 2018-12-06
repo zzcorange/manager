@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.*;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -73,7 +74,7 @@ public class RedisUtil {
              return listOperations.rightPush(key,value);
         }
         public long insertListRight(String key ,Object value,long exp){
-           return  listOperations.rightPush(key,value,exp);
+                return  listOperations.rightPush(key,value,exp);
         }
         public Object getListRight(String key){
             return listOperations.rightPop(key);
@@ -85,6 +86,9 @@ public class RedisUtil {
         }
         public Object selectSet(String key){
             return setOperations.pop(key);
+        }
+        public Set<Object> selectAllSet(String key){
+            return setOperations.members(key);
         }
     /**
      * 删除

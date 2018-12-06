@@ -2,7 +2,7 @@ server:
   port: 8085
 spring:
   application:
-    name: manager-commonaction
+    name: manager-common
 eureka:
   client:
     service-url:

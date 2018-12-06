@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chengzi.database.dao.MenuMapper" >
+
+  <resultMap id="BaseResultMap" type="com.chengzi.entity.auth.Menu" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="parent_id" property="parent_id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR"/>
+    <result column="url" property="url" jdbcType="VARCHAR"/>
+    <collection property="childMenu" ofType="com.chengzi.entity.auth.Menu" select="selectChildMenu" column="id"/>
+  </resultMap>
+  <select id="queryAll" resultMap="BaseResultMap">
+    select * from chengzi_menu where parent_id=-1
+  </select>
+  <select id="selectChildMenu" parameterType="int" resultMap="BaseResultMap">
+    select * from chengzi_menu where parent_id = #{id}
+  </select>
+  <insert id="insertMenu" parameterType="com.chengzi.entity.auth.Menu">
+    insert into chengzi_menu(parent_id,name,url)
+        values(#{parent_id},#{name},#{url})
+  </insert>
+</mapper>

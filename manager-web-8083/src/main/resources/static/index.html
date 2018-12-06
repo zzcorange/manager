@@ -17,7 +17,7 @@
 <title>信息发布平台</title>
 
 <link href="css/style.css" rel="stylesheet" />
-
+    <script src="js/common.js"></script>
 <script src="js/jquery.js"></script>
 
 <script src="js/jquery.cookie.js"></script>
@@ -27,7 +27,7 @@
 <script src="js/nav.js"></script>
 
 <script src="js/setHeight.js"></script>
-
+    <script src="js/menu.js"></script>
 </head>
 
 
@@ -60,17 +60,17 @@
 
 <div class="content">
 
-  <div class="leftc" >
+  <div class="leftc" id="leftc" >
 
 
-    <div class="firstnav"> <a href="javascript:void(0)" class="leftnv2"  >网站管理</a>
+    <!--<div class="firstnav"> <a href="javascript:void(0)" class="leftnv2"  >网站管理</a>
 
       <ul class="secnav">
 
-        <li class="nvhove"> <a href=""  target="rightIfr">网站配置</a> <span ></span> </li>
+        <li class="nvhove"> <a href="javascript:goUrlInIframe('authorization_list.html');"  target="rightIfr">权限管理</a> <span ></span> </li>
 
-        <li> <a href="twgl_list.html"  target="rightIfr">菜单管理</a> <span ></span> </li>
-         <li> <a href="twgl_list.html"  target="rightIfr">友情链接管理</a> <span ></span> </li>
+        <li> <a href="javascript:goUrlInIframe('twgl_list.html');"  target="rightIfr">菜单管理</a> <span ></span> </li>
+         <li> <a href="javascript:goUrlInIframe('twgl_list.html');"  target="rightIfr">友情链接管理</a> <span ></span> </li>
 
       </ul>
 
@@ -80,11 +80,11 @@
 
       <ul class="secnav">
 
-        <li class="nvhove"> <a href="lmgl.html"  target="rightIfr">栏目管理</a> <span ></span> </li>
+        <li class="nvhove"> <a href="javascript:goUrlInIframe('lmgl.html');"  target="rightIfr">栏目管理</a> <span ></span> </li>
 
         <li> <a href=""  target="rightIfr">模板管理</a> <span ></span> </li>
          <li> <a href=""  target="rightIfr">类别管理</a> <span ></span> </li>
-          <li> <a href="wzgl.html"  target="rightIfr">文章管理</a> <span ></span> </li>
+          <li> <a href="javascript:goUrlInIframe('wzgl.html');"  target="rightIfr">文章管理</a> <span ></span> </li>
            <li> <a href=""  target="rightIfr">资源管理</a> <span ></span> </li>
 
       </ul>
@@ -93,14 +93,14 @@
 
     <div class="firstnav"> <a href="javascript:void(0)" class="leftnv2"  >审核管理</a>
       <ul class="secnav">
-        <li class="nvhove"> <a href="shgl.html"  target="rightIfr">审核管理</a> <span ></span> </li>
+        <li class="nvhove"> <a href="javascript:goUrlInIframe('shgl.html');"  target="rightIfr">审核管理</a> <span ></span> </li>
       </ul>
 
     </div>
 
     <div class="firstnav"> <a href="javascript:void(0)" class="leftnv1"  >推送管理</a>
       <ul class="secnav">
-        <li class="nvhove"> <a href="tsxxgl.html"  target="rightIfr">推送消息管理</a> <span ></span> </li>
+        <li class="nvhove"> <a href="javascript:goUrlInIframe('tsxxgl.html');"  target="rightIfr">推送消息管理</a> <span ></span> </li>
         <li> <a href="#"  target="rightIfr">群组管理</a> <span ></span> </li>
         <li> <a href="#" target="rightIfr" >用户管理</a> <span ></span> </li>
          <li> <a href="#" target="rightIfr" >推送日志</a> <span ></span> </li>
@@ -109,7 +109,7 @@
 
     <div class="firstnav"> <a href="javascript:void(0)" class="leftnv3"  >统计分析</a>
       <ul class="secnav">
-        <li class="nvhove"> <a href="order.html"  target="rightIfr">发布统计</a> <span ></span> </li>
+        <li class="nvhove"> <a href="javascript:goUrlInIframe('order.html');"  target="rightIfr">发布统计</a> <span ></span> </li>
         <li> <a href="#"  target="rightIfr">推送统计</a> <span ></span> </li>
         <li> <a href="#" target="rightIfr" >我发布的文章</a> <span ></span> </li>
       </ul>
@@ -120,22 +120,22 @@
       <ul class="secnav">
 
         <li class="nvhove"> <a href="##"  target="rightIfr" >机构管理</a> <span ></span> </li>
-        <li> <a href="dddl.html"  target="rightIfr">岗位管理</a> <span ></span> </li>
-        <li> <a href="dddl.html"  target="rightIfr">工号管理</a> <span ></span> </li>
-        <li> <a href="dddl.html"  target="rightIfr">系统配置</a> <span ></span> </li>
-        <li> <a href="dddl.html"  target="rightIfr">渠道管理</a> <span ></span> </li>
+        <li> <a href="javascript:goUrlInIframe('dddl.html');"  target="rightIfr">岗位管理</a> <span ></span> </li>
+        <li> <a href="javascript:goUrlInIframe('dddl.html');"  target="rightIfr">工号管理</a> <span ></span> </li>
+        <li> <a href="javascript:goUrlInIframe('dddl.html');"  target="rightIfr">系统配置</a> <span ></span> </li>
+        <li> <a href="javascript:goUrlInIframe('dddl.html');"  target="rightIfr">渠道管理</a> <span ></span> </li>
 
       </ul>
 
     </div>
-
+-->
   </div>
 
   <div class="rightc">
 
     <div class="rigcon">
 
-      <iframe width="100%" frameborder="0" src="homepage.html"  scrolling="auto" name="rightIfr"></iframe>
+      <iframe width="100%" frameborder="0" src=""  scrolling="auto" name="rightIfr" id="iframe"></iframe>
 
     </div>
 
@@ -146,7 +146,9 @@
 </div>
 
 </div>
-
+<script>
+    goUrlInIframe("homepage.html");
+</script>
 </body>
 
 </html>

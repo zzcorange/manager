@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient("manager-redis")
 public interface UserRedisService {
-    @PostMapping("/redis/login")
+    @PostMapping("/login")
     String login(@RequestParam("userName")  String userName, @RequestParam("token") String token);
 }

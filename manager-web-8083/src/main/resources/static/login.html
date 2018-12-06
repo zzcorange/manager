@@ -12,7 +12,7 @@
 <script src="./js/jquery.js"></script>
 <script src="js/jquery.cookie.js"></script>
 <script src="./js/login.js" charset="utf-8"></script>
-
+  <script src="./js/common.js" charset="utf-8"></script>
 <script>
 var $main = $cloud = mainwidth = null;
 var offset1 = 120;
@@ -69,15 +69,11 @@ setInterval(function flutter() {
           </li> 
           <li style="height:20px"> <input type="checkbox" class="vm" name="rem" id="rem" /> <label for="rem">记住密码</label></li>
           <li style="width:190px; float:left;">
-          
-            <span  style="width:182px"><input type="text" class="tblipt "  placeholder="请输入验证密码"/></span> 
+
           </li>
-          <li style="width:90px;float:left; border:0;"> 
-          <img src="images/ewm.jpg" width="89" height="35"> </li>
+          <li style="width:90px;float:left; border:0;"> </li>
           <div class="clear" ></div>
-        
-          <li style="border:0;"> <a href="###"  id="login" class="logbtn"><span class="transition">登录<br/><br/>登录</span></a> </li><p class="zc"><a href="#">还没有账号，快速注册</a></p>
-          <p class="admts">网络出错，请稍后登录</p>
+          <li style="border:0;"> <a href="javascript:void(0)"  id="login" class="logbtn"><span class="transition">登录<br/><br/>登录</span></a> </li><p class="zc"><a href="#">还没有账号，快速注册</a></p>
         </ul>
       </div>
 
@@ -85,7 +81,39 @@ setInterval(function flutter() {
  
 
 </div>
-<div class="bom">Copyright 2016 清远市人力资源和社会保障局 版权所有 All Right Reserved</div>
+<script>
+  $(document).ready(function(){
+      $("#login").click(function(){
+          var username = $("#username").val();
+          var password = $("#password").val();
+          if(!username){
+              alert("用户名不能为空；");
+              return;
+          }
+          if(!password){
+              alert("密码不能为空；");
+              return;
+          }
+          $.ajax({
+              url:getUrl(getRootPath()+"/common/login.do"),
+              data:{
+                "userName":username,
+                  "password":password
+              },
+              type:"POST",
+              success:function(data){
+                  var json = $.parseJSON(data);
+                  if(json.code==1){
+                      alert(getRootPath()+"/web/index.html?token="+json.message);
+                      window.location.href=getRootPath()+"/web/index.html?token="+json.message;
+                  }
 
+                  else
+                      alert(data.message);
+              }
+          });
+      });
+  });
+</script>
 </body>
 </html>

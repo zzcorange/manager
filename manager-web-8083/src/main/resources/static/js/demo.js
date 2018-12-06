@@ -1,11 +1,11 @@
 $(function(){
 	
 	//$("#verify_btn").remove();
-	//$("#verify_btn").hide();
+	//$("#verify_btn").hide(
 	
 	var grid = $('#dataTable').datagrid({
 		//url:'js/data.action',
-		//title:'²âÊÔÀý×Ó',
+		//title:'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
 		data:list,
 		pagination:true,
         sortName:"verify_id",
@@ -15,20 +15,20 @@ $(function(){
         rownumbers:true,
         //fitColumns:true,
         singleSelect:false,
-	    frozenColumns:[[//¹Ì¶¨ÁÐ
+	    frozenColumns:[[//ï¿½Ì¶ï¿½ï¿½ï¿½
 	       {field:'ck',checkbox:true,width:80},
-	       {field:'verifyId',title:'ÊôÐÔÃû³Æ',width:180},
-	       {field:'objName',title:'ÊôÐÔ±àÂë',width:120},
-	       {field:'objId',title:'ÊôÐÔÀàÐÍ',width:100}
+	       {field:'verifyId',title:'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',width:180},
+	       {field:'objName',title:'ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½',width:120},
+	       {field:'objId',title:'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',width:100}
 	     ]],
 	    columns:[[
-	        {field:'nameOfVerifyObj',title:'ÊôÐÔ·ÖÀà',width:100},
-	        {field:'nameOfVerifyType',title:'Õ¹Ê¾ÀàÐÍ',width:120,styler:cellStyler},
-	        {field:'state',title:'ÊÇ·ñÉ¸Ñ¡Ìõ¼þ',width:120,formatter:formatState},
+	        {field:'nameOfVerifyObj',title:'ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½',width:100},
+	        {field:'nameOfVerifyType',title:'Õ¹Ê¾ï¿½ï¿½ï¿½ï¿½',width:120,styler:cellStyler},
+	        {field:'state',title:'ï¿½Ç·ï¿½É¸Ñ¡ï¿½ï¿½ï¿½ï¿½',width:120,formatter:formatState},
 	        {field:'verifyResult',title:'×´Ì¬',width:100,formatter:formatVerifyResult},
-	        {field:'applyPeople',title:'ÉóºË×´Ì¬',width:80},
-	        {field:'applyTime',title:'ÊÇ·ñ¿ÉÐÞ¸Ä',width:150},
-	        {field:'null',title:'ÐÞ¸Ä¼ÇÂ¼',width:80,formatter:tipsInfo}
+	        {field:'applyPeople',title:'ï¿½ï¿½ï¿½×´Ì¬',width:80},
+	        {field:'applyTime',title:'ï¿½Ç·ï¿½ï¿½ï¿½Þ¸ï¿½',width:150},
+	        {field:'null',title:'ï¿½Þ¸Ä¼ï¿½Â¼',width:80,formatter:tipsInfo}
 	   ]],
 	   rowStyler: resetStyle,
 	   onLoadSuccess:showTips,
@@ -60,16 +60,16 @@ function changeBtn(index,row){
 }
 
 /**
- * Õ¹¿ªÏêÇé
+ * Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @param row
  * @returns {String}
  */
 function getDetailInfo(row){
 	/*var html = '<table class="dv-table" border="0"><tr>';
-	html+='<td class="dv-label">ÉóºËÈË: </td><td>'+row.verifyPeople+'<td>';
-	html+='<td class="dv-label">ÉêÇëËµÃ÷: </td><td>'+row.applyExplain+'<td></tr><tr>';
-	html+='<td class="dv-label">ÉóºËÊ±¼ä: </td><td>'+row.verifyTime+'<td>';
-	html+='<td class="dv-label">ÉóºËÒâ¼û: </td><td>'+row.verifySuggestion+'<td></tr></table>';
+	html+='<td class="dv-label">ï¿½ï¿½ï¿½ï¿½ï¿½: </td><td>'+row.verifyPeople+'<td>';
+	html+='<td class="dv-label">ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½: </td><td>'+row.applyExplain+'<td></tr><tr>';
+	html+='<td class="dv-label">ï¿½ï¿½ï¿½Ê±ï¿½ï¿½: </td><td>'+row.verifyTime+'<td>';
+	html+='<td class="dv-label">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: </td><td>'+row.verifySuggestion+'<td></tr></table>';
 	return html;*/
 }
 
@@ -81,10 +81,10 @@ function resetStyle(index,row){
 
 function formatState(val,row){
 	if(val=='S0A'){
-		return '´ýÉóºË';
+		return 'ï¿½ï¿½ï¿½ï¿½ï¿½';
 	}
 	if(val=='S0X'){
-		return 'ÒÑÉóºË';
+		return 'ï¿½ï¿½ï¿½ï¿½ï¿½';
 	}
 	return '-';
 }
@@ -92,20 +92,20 @@ function formatState(val,row){
 function formatVerifyResult(val,row){
 	var result = "";
 	if('N'==row.verifyResult){
-		result = "ÉóºË²»Í¨¹ý";
+		result = "ï¿½ï¿½Ë²ï¿½Í¨ï¿½ï¿½";
 	}else if('Y'==row.verifyResult){
-		result = "ÉóºËÍ¨¹ý";
+		result = "ï¿½ï¿½ï¿½Í¨ï¿½ï¿½";
 	}
 	return result;
 }
 
 function tipsInfo(val,row){
-	return '<a name="mytips"  href="#" title="´´½¨ÈË:'+row.createPeople+'@@´´½¨Ê±¼ä:'+row.createTime+'@@×î½üÐÞ¸ÄÈË:'+row.updatePeople+'@@×î½üÐÞ¸ÄÊ±¼ä:'+row.updateTime+'">ÏêÇé</a>';
+	return '<a name="mytips"  href="#" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:'+row.createPeople+'@@ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½:'+row.createTime+'@@ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½:'+row.updatePeople+'@@ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½Ê±ï¿½ï¿½:'+row.updateTime+'">ï¿½ï¿½ï¿½ï¿½</a>';
 }
 
 
 /**
- * ÐÞ¸Ä¼ÇÂ¼ÏêÇé
+ * ï¿½Þ¸Ä¼ï¿½Â¼ï¿½ï¿½ï¿½ï¿½
  * @param data
  */
 function showTips(data){
@@ -139,13 +139,13 @@ function cellStyler(value,row,index){
 }
 
 /**
- * ´ò¿ªÉóºË´°¿Ú
+ * ï¿½ï¿½ï¿½ï¿½Ë´ï¿½ï¿½ï¿½
  */
 function toVerify(){
     var rows = $('#dataTable').datagrid('getSelections');
     if (rows && rows.length==1){
     	if(rows[0].state!='S0A'){
-    		$.messager.alert('×¢Òâ','¸Ã¼ÇÂ¼²»ÐèÒªÉóºË!','info');
+    		$.messager.alert('×¢ï¿½ï¿½','ï¿½Ã¼ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½!','info');
     		return;
     	}
     	var msg = openShowModal(contextPath + '/goods/verify/toVerify.action?verifyId='+rows[0].verifyId, 700,300);
@@ -153,12 +153,12 @@ function toVerify(){
     		$('#dataTable').datagrid('reload');
     	}
     }else{
-    	$.messager.alert('×¢Òâ','ÇëÑ¡ÔñÒ»Ïî½øÐÐÉóºË!','info');
+    	$.messager.alert('×¢ï¿½ï¿½','ï¿½ï¿½Ñ¡ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!','info');
     }
 }
 
 /**
- * ´ò¿ªÅúÁ¿ÉóºË´°¿Ú
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë´ï¿½ï¿½ï¿½
  */
 function toBatchVerify(){
 	 var rows = $('#dataTable').datagrid('getSelections');
@@ -173,7 +173,7 @@ function toBatchVerify(){
 	 
 	$("#batchWin").window("clear");
 	$("#batchWin").window({
-		title:'ÅúÁ¿ÉóºË',
+		title:'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
 		width:800,
 		height:320,
 		 href:'load.htm',
@@ -186,7 +186,7 @@ function toBatchVerify(){
 
 
 /**
- * ÅúÁ¿ÉóºËÌá½»
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»
  */
 function submitForm(){
 	$("#subForm").form('submit', {
@@ -196,7 +196,7 @@ function submitForm(){
 		},
 		success:function(data){
 			var results = splitReturnValue(data);
-			$.messager.alert('×¢Òâ',results[1],'info');
+			$.messager.alert('×¢ï¿½ï¿½',results[1],'info');
 			if (BooleanHelper.isTrue(results[0])){
 				$('#batchWin').window('close');
 				$('#dataTable').datagrid('reload');
