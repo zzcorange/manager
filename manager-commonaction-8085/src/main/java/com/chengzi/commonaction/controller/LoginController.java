@@ -7,6 +7,7 @@ import com.chengzi.enums.Code;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.UUID;
 
 @RestController
@@ -17,7 +18,7 @@ public class LoginController {
     private UserRedisService userRedisService;
     @PostMapping("/login.do")
     @ResponseBody
-    public String login(@RequestParam String userName,@RequestParam String password){
+    public String login(@RequestParam String userName, @RequestParam String password, HttpSession session){
         User user = userService.selectOne(userName);
         if(user==null){
             return Code.LOGIN_FAIL_NOTUSER.toString();
@@ -29,7 +30,12 @@ public class LoginController {
         /**
          * 加载token到redis
          */
-        String uuid = userRedisService.login(userName, UUID.randomUUID().toString());
+        String tempuuid = UUID.randomUUID().toString();
+        String uuid = userRedisService.login(userName, tempuuid);
+        if(!"-1".equals(uuid)){
+            System.out.println("commonaction token ："+tempuuid);
+            session.setAttribute("token",tempuuid);
+        }
         return  !"-1".equals(uuid)?Code.SUCCESS.toString(uuid):Code.LOGIN_FAIL.toString();
     }
     @GetMapping("/test")

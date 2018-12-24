@@ -3,6 +3,7 @@ package com.chengzi.database.dao;
 import com.chengzi.entity.User;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserMapper {
     /**
@@ -19,7 +20,9 @@ public interface UserMapper {
      *
      * @mbggenerated
      */
-    List<User> selectAll();
+    List<User> selectAll(Map map);
 
     User selectOne(String userName);
+
+    int count();
 }

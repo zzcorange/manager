@@ -6,6 +6,9 @@ public enum Code {
     LOGIN_FAIL_NOTUSER("-1","用户不存在"),
     LOGIN_FAIL_PASSWORD_ERROR("-1","密码错误"),
     LOGIN_FAIL("-1","登录失败"),
+    ERROR_500("-2","系统内部错误"),
+    DATAVAVALIAD("-3","参数鉴权失败"),
+    FAIL("-4","失败，请重试"),
     SUCCESS("1","");
     private String code;
     private String message;
@@ -22,5 +25,12 @@ public enum Code {
     public String toString(String message){
         this.message = message;
         return toString();
+    }
+    public String toErrorString(String errorMessage){
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("code",code);
+        jsonObject.put("message",message);
+        jsonObject.put("errorMessage",errorMessage);
+        return jsonObject.toString();
     }
 }

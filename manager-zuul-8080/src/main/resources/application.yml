@@ -9,6 +9,11 @@ server:
 spring:
   application:
     name: manager-zuul
+  redis:
+    database: 0
+    host: 119.23.74.163
+    port: 8003
+    password: zzctest123456
  # sleuth:
  #  sampler:
   #    probability: 1.0
@@ -19,13 +24,17 @@ zuul:
     web:
       path: /web/**
       serviceId: manager-web
+      sensitiveHeaders: "*"
     database:
       path: /database/**
       serviceId: manager-database
+      sensitiveHeaders: "*"
     redis:
       path: /redis/**
       serviceId: manager-redis
+      sensitiveHeaders: "*"
     common:
       path: /common/**
       serviceId: manager-common
+      sensitiveHeaders: "*"
 debug: true

@@ -43,6 +43,9 @@ public class RedisUtil {
             this.zSetOperations = redisTemplate.opsForZSet();
             this.clusterOperations = redisTemplate.opsForCluster();
         }
+        public boolean containKey(String key){
+            return redisTemplate.hasKey(key);
+        }
         public  void insert(String key,Object value,long exp){
             operations.set(key,value,exp, TimeUnit.SECONDS);
         }

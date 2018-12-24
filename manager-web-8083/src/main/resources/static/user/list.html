@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>信息发布平台</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+    <link rel="stylesheet" href="../css/tree.css">
+    <link href="../css/style.css" rel="stylesheet" />
+    <script src="../js/jquery.js"></script>
+    <script src="../js/com.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/jquery.easyui.min.js"></script>
+    <script src="../js/childInit.js"></script>
+    <script src="../js/layer/layer.js"></script>
+    <script src="../js/user/list.js"></script>
+    <style>
+        .twzsx .search input[type='checkbox']{margin-left:5px;}
+        .twzsx .search input[type='text']{margin-right: 5px;}
+        .twzsx .search .searchTit{width: 50px;}
+        .addSSel span{width: 100px;background: #fff url("../images/ico_arrow6.gif") no-repeat 100px center;}
+        .addSSel dl{min-width:114px;}
+    </style>
+</head>
+<body>
+<div class="ntitl"> <span class="pl10"><img src="../images/home.png" class="ime"/><span id="menulocation"></span> </div>
+<div class="rigco_c fl">
+    <div class="clear pt10"></div>
+    <div class="bgwhite twzsx">
+        <div class="tle"><img src="../images/title_ico.jpg" class="img"/>用户管理</div>
+        <div class="clear"></div>
+
+        <div class="search" style="height:130px;">
+            <span class="searchTit">文章标题</span><input type="text" style="width:100px;">
+
+            <span class="searchTit"> 文章类别</span>
+            <span class="addSSel" style="display:inline-block;vertical-align: middle;">
+            <span>全部</span>
+            <dl>
+              <dd><em>全部</em></dd>
+              <dd><em>新闻动态</em></dd>
+            </dl>
+          </span>
+            <span class="searchTit">    状态</span>
+            <span class="addSSel" style="display:inline-block;vertical-align: middle;">
+            <span>全部</span>
+            <dl>
+              <dd><em>全部</em></dd>
+              <dd><em>预发布</em></dd>
+            </dl>
+          </span>
+            <span class="searchTit">发布人</span><input type="text" style="width:100px;">
+            <span class="">
+            <button>查询</button>
+            <button>清空</button>
+          </span>
+            <span class="searchTit">发布渠道</span>
+            <input type="checkbox" name="ways" value="">App消息
+            <input type="checkbox" name="ways" value="">微信公众号
+            <input type="checkbox" name="ways" value="">微博
+            <input type="checkbox" name="ways" value="">短信
+
+            <span class="searchTit" style="margin-left:25px;">发布时间</span><input type="text" style="width:160px;margin-right
+          :10px;">—<input type="text" style="width:160px;">
+
+            <div class="clear"></div>
+        </div>
+
+        <div class="oper">
+            <button onclick="register()">新增</button>
+            <button>修改</button>
+            <button>删除</button>
+        </div>
+        <table class="easyui-datagrid" title="Basic DataGrid" style="width:auto;height:250px"  fitcolumns="true" pagination="true"
+               data-options="singleSelect:true,fitcolumns:true,collapsible:true,url:'../../common/user/queryAll',method:'get'">
+            <thead>
+            <tr>
+                <th data-options="field:'username',width:50,align:'center'">用户名</th>
+                <th data-options="field:'createTime',width:50,align:'center'">创建时间</th>
+            </tr>
+            </thead>
+        </table>
+        <!--<div class="pages">-->
+          <!--<span>-->
+            <!--显示-->
+            <!--<select name="" id="" class="inpt2"><option value="">50</option></select>-->
+            <!--条，共129条-->
+            <!--<span class="fr">-->
+              <!--<a href=""><首页</a>-->
+              <!--<a href=""><上一页</a>-->
+              <!--<span style="color:#36a3ff;">3</span>-->
+              <!--<a href="">下一页></a>-->
+              <!--<a href="">末页></a>-->
+              <!--<input type="text" class="inpt"> >-->
+            <!--</span>-->
+          <!--</span>-->
+            <!--<div class="clear"></div>-->
+        <!--</div>-->
+    </div>
+</div>
+<script src="../js/index.js"></script>
+</body>
+</html>

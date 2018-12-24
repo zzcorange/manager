@@ -3,20 +3,37 @@
 <mapper namespace="com.chengzi.database.dao.MenuMapper" >
 
   <resultMap id="BaseResultMap" type="com.chengzi.entity.auth.Menu" >
-    <result column="id" property="id" jdbcType="INTEGER" />
-    <result column="parent_id" property="parent_id" jdbcType="INTEGER" />
+    <result column="id" property="id" jdbcType="VARCHAR"/>
+    <result column="parent_id" property="parent_id" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR"/>
     <result column="url" property="url" jdbcType="VARCHAR"/>
     <collection property="childMenu" ofType="com.chengzi.entity.auth.Menu" select="selectChildMenu" column="id"/>
   </resultMap>
   <select id="queryAll" resultMap="BaseResultMap">
-    select * from chengzi_menu where parent_id=-1
+    select m.*,(select  group_concat(url) from chengzi_menu_authority where menu_id=m.id) authority from chengzi_menu m where parent_id=0
   </select>
-  <select id="selectChildMenu" parameterType="int" resultMap="BaseResultMap">
-    select * from chengzi_menu where parent_id = #{id}
+  <select id="selectChildMenu" parameterType="String" resultMap="BaseResultMap">
+    select m.*,(select group_concat(url) from chengzi_menu_authority where menu_id=m.id) authority from chengzi_menu m where parent_id = #{id}
   </select>
   <insert id="insertMenu" parameterType="com.chengzi.entity.auth.Menu">
     insert into chengzi_menu(parent_id,name,url)
         values(#{parent_id},#{name},#{url})
+  </insert>
+  <insert id="createMenu" parameterType="com.chengzi.entity.auth.MenuAction">
+    insert into chengzi_menu(parent_id,name,url,id)
+        values(#{parent_id},#{name},#{url},#{id})
+  </insert>
+  <update id="updateMenu" parameterType="com.chengzi.entity.auth.MenuAction">
+      update chengzi_menu set name = #{name},url=#{url}
+       where id = #{id}
+  </update>
+  <delete id="deleteMenu" parameterType="com.chengzi.entity.auth.MenuAction">
+      delete from chengzi_menu where id = #{id}
+  </delete>
+  <delete id="deleteMenuAuthority" parameterType="String">
+      delete from chengzi_menu_authority where menu_id = #{menuId}
+  </delete>
+  <insert id ="insertMenuAuthority" parameterType="java.util.Map">
+    insert into chengzi_menu_authority(menu_id,url) values(#{menuId},#{url})
   </insert>
 </mapper>

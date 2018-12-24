@@ -21,13 +21,12 @@ public class LoginController {
 
     /**
      * 判断是否已经登录
-     * @param userName
      * @param token
      * @return  1 已经成功登录  0 未登录
      */
     @GetMapping("/isLogin")
-    public String isLogin(@RequestParam  String userName,@RequestParam String token){
-        return token.equals(redisUtil.select(loginPrefix+userName))?"1":"0";
+    public boolean isLogin(@RequestParam String token){
+       return redisUtil.containKey(token);
     }
 
     /**
@@ -44,7 +43,7 @@ public class LoginController {
            return redisUtil.select(key).toString();
        }
        try{
-            redisUtil.insert(key,token,exp);
+            redisUtil.insert(token,userName,exp);
             return token;
        }catch (Exception e){
            return "-1";

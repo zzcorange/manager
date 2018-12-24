@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: manager-common
+  redis:
+    database: 0
+    host: 119.23.74.163
+    port: 8003
+    password: zzctest123456
 eureka:
   client:
     service-url:

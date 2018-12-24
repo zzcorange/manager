@@ -1,5 +1,6 @@
 package com.chengzi.zuul.filter;
 
+import com.chengzi.zuul.service.RedisOperator;
 import com.chengzi.zuul.service.UserServiceForDataBase;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -21,6 +23,8 @@ import java.util.Arrays;
 @PropertySource("classpath:properties/login.properties")
 public class LoginFilter extends ZuulFilter implements InitializingBean {
     private static Logger log= LoggerFactory.getLogger(LoginFilter.class);
+    @Autowired
+    private RedisOperator redisOperator;
     @Value("${login.nottoken}")
     private  String notNeedToken;
 
@@ -45,9 +49,12 @@ public class LoginFilter extends ZuulFilter implements InitializingBean {
     public Object run() throws ZuulException {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
+        HttpSession session = request.getSession();
         log.info(String.format("%s >>> %s",request.getMethod(),request.getRequestURL().toString())+">>>"+request.getRequestURI());
         Object acceptToken = request.getParameter("token");
-        if(!isNotNeedToken(request.getRequestURI())&&acceptToken == null){
+        Object token = session.getAttribute("token");
+        log.info("sesssionToken="+token);
+        if(!isNotNeedToken(request.getRequestURI())&&((acceptToken == null||!redisOperator.isLogin(acceptToken.toString()))&&token==null)){
             log.warn("token is empty");
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(401);
