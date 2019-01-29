@@ -11,9 +11,9 @@ spring:
     name: manager-zuul
   redis:
     database: 0
-    host: 119.23.74.163
-    port: 8003
-    password: zzctest123456
+    host: 127.0.0.1
+    port: 6379
+   # password: zzctest123456
  # sleuth:
  #  sampler:
   #    probability: 1.0
