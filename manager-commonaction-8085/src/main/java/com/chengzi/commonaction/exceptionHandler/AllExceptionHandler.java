@@ -15,9 +15,15 @@ public class AllExceptionHandler {
 		if(ex instanceof org.springframework.validation.BindException){
 			return deal((org.springframework.validation.BindException)ex);
 		}
+		if(ex instanceof  org.springframework.web.bind.MissingServletRequestParameterException){
+			return deal((org.springframework.web.bind.MissingServletRequestParameterException)ex);
+		}
+		if(ex instanceof  org.springframework.web.HttpMediaTypeNotSupportedException){
+			return deal((org.springframework.web.HttpMediaTypeNotSupportedException)ex);
+		}
 		return Code.ERROR_500.toString();
 	}
-	public String deal(org.springframework.validation.BindException ex){
+	private String deal(org.springframework.validation.BindException ex){
 		StringBuilder sb = new StringBuilder();
 		ex.getAllErrors().forEach((error)->{
 			sb.append(":");
@@ -25,5 +31,11 @@ public class AllExceptionHandler {
 			sb.append(";");
 		});
 		return Code.DATAVAVALIAD.toErrorString(sb.toString());
+	}
+	private String deal(org.springframework.web.bind.MissingServletRequestParameterException ex){
+		   return Code.MISSPARAMETER.toErrorString("参数【"+ex.getParameterName()+"】缺失");
+	}
+	private String deal(org.springframework.web.HttpMediaTypeNotSupportedException ex){
+		return Code.HTTPMEDIATYPENOTSUPPORT.toString();
 	}
 } 

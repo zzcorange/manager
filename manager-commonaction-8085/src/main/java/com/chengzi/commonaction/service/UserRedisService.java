@@ -9,4 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface UserRedisService {
     @PostMapping("/login")
     String login(@RequestParam("userName")  String userName, @RequestParam("token") String token);
+    @GetMapping("/clearLoginToken")
+    void clearLoginToken(@RequestParam("token") String token);
 }

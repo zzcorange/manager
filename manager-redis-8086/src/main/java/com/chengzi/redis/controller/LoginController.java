@@ -49,6 +49,13 @@ public class LoginController {
            return "-1";
        }
     }
-
+    /**
+     * 清除登录凭证
+     */
+    @GetMapping("/clearLoginToken")
+    public void clearLoginToken(@RequestParam String token)
+    {
+        redisUtil.delete(token);
+    }
 
 }

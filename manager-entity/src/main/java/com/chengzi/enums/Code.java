@@ -9,6 +9,9 @@ public enum Code {
     ERROR_500("-2","系统内部错误"),
     DATAVAVALIAD("-3","参数鉴权失败"),
     FAIL("-4","失败，请重试"),
+    EMPTY("-5","数据为空"),
+    MISSPARAMETER("-6","缺失参数"),
+    HTTPMEDIATYPENOTSUPPORT("-7","请求的type不支持，请检查"),
     SUCCESS("1","");
     private String code;
     private String message;

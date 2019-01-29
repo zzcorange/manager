@@ -47,6 +47,7 @@ public class LoginFilter extends ZuulFilter implements InitializingBean {
 
     @Override
     public Object run() throws ZuulException {
+        boolean isLogin = true;
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         HttpSession session = request.getSession();
@@ -54,7 +55,11 @@ public class LoginFilter extends ZuulFilter implements InitializingBean {
         Object acceptToken = request.getParameter("token");
         Object token = session.getAttribute("token");
         log.info("sesssionToken="+token);
-        if(!isNotNeedToken(request.getRequestURI())&&((acceptToken == null||!redisOperator.isLogin(acceptToken.toString()))&&token==null)){
+        if(!isNotNeedToken(request.getRequestURI())//需要鉴权
+                &&((acceptToken==null&&token==null)//参数，session中都没有token
+                    ||(token==null&&acceptToken!=null&&!redisOperator.isLogin(acceptToken.toString())))//参数中的token无效
+                ){
+            isLogin = false;
             log.warn("token is empty");
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(401);
@@ -68,9 +73,18 @@ public class LoginFilter extends ZuulFilter implements InitializingBean {
 
             }
         }
+        if(isLogin&&token==null){
+            session.setAttribute("token","acceptToken");
+        }
         System.out.println("通过验证");
         return null;
     }
+
+    /**
+     * 判断此url是否不需要token
+     * @param url
+     * @return
+     */
     public boolean isNotNeedToken(String url){
         if(notNeedTokenList.size()==0) return false;
         for(String temp : notNeedTokenList){

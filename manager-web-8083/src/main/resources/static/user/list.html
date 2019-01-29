@@ -10,12 +10,15 @@
     <link rel="stylesheet" href="../css/easyui.css">
     <link rel="stylesheet" href="../css/tree.css">
     <link href="../css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../css/easyui/themes/icon.css">
     <script src="../js/jquery.js"></script>
     <script src="../js/com.js"></script>
     <script src="../js/nav.js"></script>
     <script src="../js/jquery.easyui.min.js"></script>
     <script src="../js/childInit.js"></script>
     <script src="../js/layer/layer.js"></script>
+    <script src="../js/common.js"></script>
     <script src="../js/user/list.js"></script>
     <style>
         .twzsx .search input[type='checkbox']{margin-left:5px;}
@@ -74,14 +77,7 @@
             <button>修改</button>
             <button>删除</button>
         </div>
-        <table class="easyui-datagrid" title="Basic DataGrid" style="width:auto;height:250px"  fitcolumns="true" pagination="true"
-               data-options="singleSelect:true,fitcolumns:true,collapsible:true,url:'../../common/user/queryAll',method:'get'">
-            <thead>
-            <tr>
-                <th data-options="field:'username',width:50,align:'center'">用户名</th>
-                <th data-options="field:'createTime',width:50,align:'center'">创建时间</th>
-            </tr>
-            </thead>
+        <table id = "datagrid"class="easyui-datagrid" title="Basic DataGrid" style="width:auto;height:250px">
         </table>
         <!--<div class="pages">-->
           <!--<span>-->

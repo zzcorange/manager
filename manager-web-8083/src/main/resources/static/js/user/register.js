@@ -33,7 +33,7 @@ $(document).ready(function(){
                 password:password
             },
             success:function(data){
-                alert(data);
+                alert("返回值："+data);
                 window.parent.window.location.reload();
             }
 });

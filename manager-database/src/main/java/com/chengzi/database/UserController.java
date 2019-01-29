@@ -40,7 +40,15 @@ public class UserController {
         return 1;
     }
     @GetMapping("/database/user/getOne")
-    public User getOne(@RequestParam String userName){
-        return userMapper.selectOne(userName);
+    public User getOne(@RequestParam int id){
+        return userMapper.selectOne(id);
+    }
+    @GetMapping("/database/user/selectOne")
+    public User selectOne(@RequestParam String username){
+        return userMapper.selectOneByUserName(username);
+    }
+    @PostMapping("/database/user/update")
+    public int update(@RequestBody User user){
+        return userMapper.update(user);
     }
 }

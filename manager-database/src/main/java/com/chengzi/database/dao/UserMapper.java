@@ -22,7 +22,8 @@ public interface UserMapper {
      */
     List<User> selectAll(Map map);
 
-    User selectOne(String userName);
-
+    User selectOne(int id);
+    User selectOneByUserName(String username);
     int count();
+    int update(User user);
 }

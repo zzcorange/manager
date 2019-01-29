@@ -83,7 +83,7 @@ public class MenuServiceImpl implements MenuService {
     public  void deleteMenuAuthority(MenuAction menuAction){
         menuMapper.deleteMenuAuthority(menuAction.getId());
     }
-    @Transactional()
+    @Transactional
     public void insertMenuAuthority(MenuAction menuAction){
         if(menuAction.getAuthority()==null||menuAction.getAuthority().length()==0)
             return;

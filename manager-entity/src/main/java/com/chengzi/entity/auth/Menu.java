@@ -126,4 +126,51 @@ public class Menu extends BaseEntity {
 
         return sb.toString();
     }
+    public String toGroupString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        sb.append("\"id\":\"");
+        sb.append(id);
+        sb.append("\",");
+        sb.append("\"pId\":\"");
+        sb.append(parent_id);
+        sb.append("\",");
+        sb.append("\"name\":\"");
+        sb.append(name);
+        sb.append("\"},");
+        for(Menu menu:childMenu){
+            sb.append(menu.toZTreeString());
+            sb.append(",");
+        }
+        if(sb.charAt(sb.length()-1)==',')
+            sb.deleteCharAt(sb.length()-1);
+
+        return sb.toString();
+    }
+    public String toGroupString(List<String> checked){
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        sb.append("\"id\":\"");
+        sb.append(id);
+        sb.append("\",");
+        sb.append("\"pId\":\"");
+        sb.append(parent_id);
+        sb.append("\",");
+        sb.append("\"name\":\"");
+        sb.append(name);
+        if(checked.contains(id)){//需要选中
+            sb.append("\",");
+            sb.append("\"checked\":\"true");
+        }
+
+        sb.append("\"},");
+        for(Menu menu:childMenu){
+            sb.append(menu.toGroupString(checked));
+            sb.append(",");
+        }
+        if(sb.charAt(sb.length()-1)==',')
+            sb.deleteCharAt(sb.length()-1);
+
+        return sb.toString();
+    }
 }

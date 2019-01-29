@@ -29,6 +29,16 @@ public class User extends  BaseEntity{
 
     private Date createTime;
 
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -88,6 +98,7 @@ public class User extends  BaseEntity{
         JSONObject jsonObject = new JSONObject();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         jsonObject.put("username",this.username);
+        jsonObject.put("id",this.id);
         jsonObject.put("createTime",dateFormat.format(createTime));
         return jsonObject;
     }
