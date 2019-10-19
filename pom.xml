@@ -8,6 +8,12 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>manager-entity</module>
+        <module>manager-redis-8086</module>
+        <module>manager-commonaction-8085</module>
+        <module>manager-database</module>
+        <module>manager-web-8083</module>
+        <module>manager-zuul-8080</module>
+        <module>mananger-eurekaserver</module>
     </modules>
     <packaging>pom</packaging>
 
